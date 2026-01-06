@@ -24,6 +24,9 @@ export const PriorityTag = ({
         fontSize: size === "small" ? "12px" : "13px",
         padding: size === "small" ? "2px 8px" : "4px 12px",
         lineHeight: "1.5",
+        minWidth: showText ? "100px" : "60px",
+        textAlign: "center",
+        display: "inline-block",
       }}
     >
       {text}
