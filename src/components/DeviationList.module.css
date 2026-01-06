@@ -221,6 +221,16 @@
   gap: 8px;
 }
 
+.cardTitleText {
+  font-size: 18px;
+}
+
+@media (max-width: 400px) {
+  .cardTitleText {
+    font-size: 20px !important;
+  }
+}
+
 .cardContent {
   display: flex;
   flex-direction: column;
@@ -341,6 +351,46 @@
     text-align: center;
     padding: 40px 20px;
     color: #8c8c8c;
+  }
+}
+
+/* Extra stora kort för små skärmar som iPhone SE */
+@media (max-width: 400px) {
+  .deviationCard :global(.ant-card-head) {
+    padding: 20px 16px 14px 16px;
+  }
+
+  .deviationCard :global(.ant-card-body) {
+    padding: 24px 16px;
+  }
+
+  .deviationCard :global(.ant-card-head-title) {
+    font-size: 20px !important;
+  }
+
+  .cardContent {
+    gap: 16px;
+  }
+
+  .primaryInfo {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .infoRow {
+    gap: 12px;
+  }
+
+  .infoIcon {
+    font-size: 20px;
+  }
+
+  .infoLabel {
+    font-size: 13px;
+  }
+
+  .infoValue {
+    font-size: 17px;
   }
 }
 

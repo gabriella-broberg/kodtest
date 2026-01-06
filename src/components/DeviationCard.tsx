@@ -52,7 +52,11 @@ export const DeviationCard = ({
             }
       }
       title={
-        <Text strong style={{ fontSize: "18px" }}>
+        <Text
+          strong
+          style={{ fontSize: "18px" }}
+          className={styles.cardTitleText}
+        >
           {deviation.name}
         </Text>
       }
