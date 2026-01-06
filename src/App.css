@@ -1,0 +1,15 @@
+.app {
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+.app h1 {
+  margin-bottom: 24px;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,368 @@
+.container {
+  background: #fff;
+  padding: 24px;
+}
+
+.breadcrumb {
+  margin-bottom: 16px;
+}
+
+.breadcrumbText {
+  color: #000;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+
+.expandedContent {
+  padding: 16px;
+  background: #fafafa;
+}
+
+/* Mobilvänlig detaljvy - inspirerad av Apple/Microsoft design */
+.mobileDetails {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 8px 0;
+  background: transparent;
+}
+
+/* På större mobilskärmar (minst 480px) - använd 2 kolumner */
+@media (min-width: 480px) {
+  .mobileDetails {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 0;
+  }
+
+  /* Ta bort border på sista raden (de två sista items) */
+  .detailItem:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+
+  /* Ta bort border på jämna items i sista raden */
+  .detailItem:nth-last-child(2) {
+    border-bottom: none;
+  }
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 0;
+  border-bottom: 0.5px solid #e8e8e8;
+  min-height: 48px;
+  justify-content: center;
+}
+
+.detailItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* För 2-kolumns layout - padding mellan kolumner */
+@media (min-width: 480px) {
+  .detailItem:nth-child(even) {
+    padding-left: 16px;
+  }
+
+  .detailItem:nth-child(odd) {
+    padding-right: 16px;
+  }
+}
+
+.detailLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8c8c8c;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.detailItem :global(.ant-typography) {
+  margin: 0;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.3;
+  font-weight: 400;
+  word-break: break-word;
+}
+
+.detailItem :global(.ant-tag) {
+  margin: 0;
+  font-size: 13px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.tableHeader {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Kompakt tabell för mindre skärmar */
+.compactTable :global(.ant-table) {
+  font-size: 13px;
+}
+
+.compactTable :global(.ant-table-thead > tr > th) {
+  padding: 8px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.compactTable :global(.ant-table-tbody > tr > td) {
+  padding: 8px 4px;
+}
+
+/* Minska avstånd mellan kolumner på större skärmar */
+@media (min-width: 992px) {
+  .compactTable :global(.ant-table-thead > tr > th) {
+    padding: 8px 2px;
+  }
+
+  .compactTable :global(.ant-table-tbody > tr > td) {
+    padding: 8px 2px;
+  }
+}
+
+/* På mycket små skärmar - ännu mer kompakt */
+@media (max-width: 1200px) {
+  .compactTable :global(.ant-table-thead > tr > th) {
+    padding: 6px 6px;
+    font-size: 10px;
+  }
+
+  .compactTable :global(.ant-table-tbody > tr > td) {
+    padding: 6px 6px;
+  }
+}
+
+@media (max-width: 992px) {
+  .compactTable :global(.ant-table) {
+    font-size: 12px;
+  }
+
+  .compactTable :global(.ant-table-thead > tr > th) {
+    padding: 4px 4px;
+    font-size: 9px;
+  }
+
+  .compactTable :global(.ant-table-tbody > tr > td) {
+    padding: 4px 4px;
+  }
+}
+
+/* Card styles - gäller för alla skärmstorlekar */
+.deviationCard {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.deviationCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.deviationCard :global(.ant-card-head) {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.deviationCard :global(.ant-card-body) {
+  padding: 16px;
+}
+
+/* Bättre padding på mobil */
+@media (max-width: 768px) {
+  .deviationCard :global(.ant-card-head) {
+    padding: 16px 16px 12px 16px;
+    min-height: auto;
+  }
+
+  .deviationCard :global(.ant-card-body) {
+    padding: 20px 16px;
+  }
+
+  .cardContent {
+    gap: 12px;
+  }
+
+  .primaryInfo {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .infoRow {
+    gap: 10px;
+  }
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.primaryInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 6px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.infoIcon {
+  color: #1890ff;
+  font-size: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.infoIconSmall {
+  color: #8c8c8c;
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.infoLabel {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.infoValue {
+  font-size: 15px;
+  color: #000;
+}
+
+.secondaryInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.infoItem:last-child {
+  border-bottom: none;
+}
+
+.infoItem .infoLabel {
+  min-width: 80px;
+  font-size: 12px;
+}
+
+/* Card container - gäller för alla skärmstorlekar där cards visas */
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+/* Mindre avstånd på små skärmar */
+@media (max-width: 480px) {
+  .cardContainer {
+    gap: 20px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .deviationCard {
+    width: 100%;
+  }
+
+  .deviationCard :global(.ant-card-head-title) {
+    white-space: normal !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding-right: 8px;
+  }
+
+  .deviationCard :global(.ant-card-extra) {
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+
+  .emptyState {
+    text-align: center;
+    padding: 40px 20px;
+    color: #8c8c8c;
+  }
+}
+
+/* Resolving state - grön bakgrund + visuell feedback för färgblinda */
+.resolvingRow {
+  background-color: #f6ffed !important;
+  border-left: 4px solid #52c41a !important;
+  transition: background-color 0.3s ease, border-left 0.3s ease;
+}
+
+.resolvingRow td {
+  background-color: #f6ffed !important;
+}
+
+.resolvingCard {
+  background-color: #f6ffed !important;
+  border: 3px solid #52c41a !important;
+  box-shadow: 0 0 0 2px rgba(82, 196, 26, 0.2) !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.resolvingCard :global(.ant-card-body) {
+  background-color: #f6ffed !important;
+}
