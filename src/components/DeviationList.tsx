@@ -98,7 +98,7 @@ function DeviationList() {
                 },
                 {
                   key: "completed",
-                  label: `Avslutad (${completedCount})`,
+                  label: `Avslutade (${completedCount})`,
                 },
               ]}
             />

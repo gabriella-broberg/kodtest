@@ -1,7 +1,7 @@
 import { Table, Tooltip, Typography } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import type { Deviation } from "../types/deviation";
-import { DownOutlined } from "@ant-design/icons";
+import { RightOutlined } from "@ant-design/icons";
 import { PriorityTag } from "./PriorityTag";
 import { StatusButton } from "./StatusButton";
 import { DeviationDetails } from "./DeviationDetails";
@@ -190,11 +190,12 @@ export const DeviationTable = ({
         ),
         rowExpandable: () => true,
         expandIcon: ({ expanded, onExpand, record }) => (
-          <DownOutlined
+          <RightOutlined
             style={{
-              transform: expanded ? "rotate(180deg)" : "rotate(0deg)",
+              transform: expanded ? "rotate(90deg)" : "rotate(0deg)",
               transition: "transform 0.3s ease",
               cursor: "pointer",
+              fontSize: "12px",
             }}
             onClick={(e) => onExpand(record, e)}
             aria-label={
